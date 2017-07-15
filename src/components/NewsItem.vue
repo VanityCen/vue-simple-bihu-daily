@@ -9,16 +9,12 @@
   </div>
 </template>
 <script>
-  import { proxyImage } from '@/utils/filter'
   export default {
     props: {
       item: {
         required: true,
         type: Object
       }
-    },
-    filters: {
-      proxyImage
     }
   }
 </script>

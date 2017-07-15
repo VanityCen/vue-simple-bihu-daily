@@ -20,7 +20,6 @@
   </div>
 </template>
 <script>
-  import { proxyImage } from '@/utils/filter'
   export default {
     computed: {
       id () {
@@ -36,7 +35,6 @@
         return `url(${this.detail.image})`
       }
     },
-    filters: { proxyImage },
     beforeMount () {
       this.getNewsDetail()
     },
