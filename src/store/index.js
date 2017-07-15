@@ -19,19 +19,17 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    GET_LATEST_NEWS: ({commit}) => {
-      return getLatestNews().then(({status, data}) => {
-        if (status === 200) {
-          commit('SET_LATEST_NEWS', data.stories)
-        }
-      })
+    GET_LATEST_NEWS: async function ({commit}) {
+      let {status, data} = await getLatestNews()
+      if (status === 200) {
+        commit('SET_LATEST_NEWS', data.stories)
+      }
     },
-    GET_NEWS_DETAIL: ({commit}, {id}) => {
-      return getNewsDetail({id}).then(({status, data}) => {
-        if (status === 200) {
-          commit('SET_DETAIL', data)
-        }
-      })
+    GET_NEWS_DETAIL: async function ({commit}, {id}) {
+      let {status, data} = await getNewsDetail({id})
+      if (status === 200) {
+        commit('SET_DETAIL', data)
+      }
     }
   }
 })
