@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="content">
+    <div>
       <router-view></router-view>
     </div>
   </div>
@@ -20,7 +20,8 @@ export default {
   color: #2c3e50;
 }
 body{
-  background-color: #f9f9f9
+  background-color: #f9f9f9;
+  padding: 0;
 }
 </style>
 <style lang="stylus" scoped>

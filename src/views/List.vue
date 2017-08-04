@@ -30,16 +30,20 @@
       }
     },
     created () {
-      this.$store.dispatch('GET_LATEST_NEWS').then(() => {
+      this.getList()
+    },
+    methods: {
+      getList: async function () {
+        await this.$store.dispatch('GET_LATEST_NEWS')
         this.latestNews = this.$store.state.latestNews
-      })
+      }
     },
     components: {
       NewsItem
     }
   }
 </script>
-<style lang="stylus" scopde>
+<style lang="stylus" scoped>
 .header
   position fix
   top 0
