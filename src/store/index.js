@@ -26,6 +26,7 @@ export default new Vuex.Store({
       }
     },
     GET_NEWS_DETAIL: async function ({commit}, {id}) {
+      commit('SET_DETAIL', {})
       let {status, data} = await getNewsDetail({id})
       if (status === 200) {
         commit('SET_DETAIL', data)
